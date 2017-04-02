@@ -11,11 +11,15 @@ module.exports = {
   },
   module: {
       rules: [
-         {
-           test: /\.ts?$/,
-           loader: 'ts-loader',
-           exclude: REGEX_NODE_MODULES
-         }
+        {
+            test: /\.html$/,
+            loader: "html-loader"
+        },
+        {
+            test: /\.ts?$/,
+            loader: 'ts-loader',
+            exclude: REGEX_NODE_MODULES
+        }
           
       ]
   },

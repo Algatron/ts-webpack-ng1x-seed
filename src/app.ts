@@ -1,12 +1,18 @@
 import * as angular from "angular";
 import "angular-route";
-import "./app/routes/routes.module";
+import { ROUTES_MODULE_NAME } from "./app/routes/routes.module";
+
+declare var require: {
+    <T>(path: string): T;
+    (paths: string[], callback: (...modules: any[]) => void): void;
+    ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
+};
 
 appConfig.$inject = ['$routeProvider'];
 function appConfig($routeProvider: ng.route.IRouteProvider) {
     $routeProvider
         .when('/', {
-            template: "Here's a component: <default-route></default-route>"
+            template: "<default-route></default-route>"
         })
         .otherwise({redirectTo:'/'});
 }
@@ -14,7 +20,7 @@ function appConfig($routeProvider: ng.route.IRouteProvider) {
 const APP_NAME = "myApp";
 const APP: ng.IModule = angular.module(APP_NAME, [
     'ngRoute',
-    'RoutesModule'
+    ROUTES_MODULE_NAME
 ]);
 export default APP;
 

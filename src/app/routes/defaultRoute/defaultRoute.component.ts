@@ -1,7 +1,12 @@
 
 import * as angular from "angular"
-import RoutesModules from "../routes.module";
+import * as RoutesModules from "../routes.module";
 
+const template = require("./defaultRouteTemplate.html");
+
+const DefaultRouteComponentModuleName = "DefaultRouteComponentModuleName";
+
+const DefaultRouteModule: ng.IModule = angular.module(DefaultRouteComponentModuleName, []);
 
 class DefaultRoute implements ng.IController {
     onInit() {
@@ -9,12 +14,11 @@ class DefaultRoute implements ng.IController {
     }
 };
 
-
-
-
-RoutesModules.component('defaultRoute', {
+DefaultRouteModule.component('defaultRoute', {
     
-    template: "<div>compTemplate!!</div>",
+    template,
     controller: DefaultRoute
     
 });
+
+export { DefaultRouteComponentModuleName, DefaultRouteModule as default };
