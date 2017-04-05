@@ -9,7 +9,7 @@ const DefaultRouteComponentModuleName = "DefaultRouteComponentModuleName";
 const DefaultRouteModule: ng.IModule = angular.module(DefaultRouteComponentModuleName, []);
 
 class DefaultRoute implements ng.IController {
-    onInit() {
+    $onInit() {
         console.info("conp initializing!");
     }
 };
