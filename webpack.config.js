@@ -12,7 +12,7 @@ module.exports = {
      ]
    },
    output: {
-      filename: '[name].[chunkhash].js',
+      filename: '[name]-[hash].js',
       path: bPaths.dirs.BIN
    },
    module: {

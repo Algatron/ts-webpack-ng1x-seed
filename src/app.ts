@@ -1,6 +1,7 @@
 import * as angular from "angular";
-import "angular-route";
-import { ROUTES_MODULE_NAME } from "./app/routes/routes.module";
+import * as ngRouteName from "angular-route";
+// import { ROUTES_MODULE_NAME } from "./app/routes/routes.module";
+import "./app/routes/defaultRoute/defaultRoute.component";
 
 declare var require: {
     <T>(path: string): T;
@@ -19,8 +20,8 @@ function appConfig($routeProvider: ng.route.IRouteProvider) {
 
 const APP_NAME = "myApp";
 const APP: ng.IModule = angular.module(APP_NAME, [
-    'ngRoute',
-    ROUTES_MODULE_NAME
+    ngRouteName,
+    "RoutesModule"
 ]);
 export default APP;
 
